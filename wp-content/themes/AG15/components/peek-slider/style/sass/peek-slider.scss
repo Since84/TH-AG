@@ -1,0 +1,103 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+$sliderHeight : 38vw;
+$sliderMax: 418px;
+
+$tabletHeight: 45vw;
+$mobileHeight: 60vw;
+
+
+.peek-slider{
+	width: 100vw;
+	padding: 1em 0;
+	background: black;
+	position: relative;
+	.window {
+		display: block;
+		width: 90vw;
+		margin: auto;
+		position: relative;
+		// overflow-y: hidden;
+		// overflow-x: visible;
+	}
+
+	&.home-feature{
+		@media screen and ( min-width: 800px ){
+			height: 40vw;
+		}
+	}
+
+	.slide{
+		width: 100%;
+		position: absolute;
+		transition: 800ms right ease-in-out;
+		transition-delay: 800ms opacity;
+		opacity:1;
+		overflow: hidden;
+		display: block;
+
+		&.active{
+			right: 0%;
+			z-index: 10;
+			opacity: 1;
+			transition-delay: 0s;
+		}
+		&.next{
+			right: -100%;
+			opacity: 1;
+		}
+		&.next-next{
+			right: -200%;
+			z-index: -1;
+		}
+		&.prev{
+			right: 100%;
+			opacity: 1;
+		}
+		&.prev-prev{
+			right: 200%;
+			z-index: -1;
+		}
+
+		&.project-feature section{
+			@media screen and ( min-width: 800px ){
+				height: 36vw;
+				position: absolute;
+				top: 0; 
+				bottom: 0;
+			}
+		}
+	}
+
+	.pager {
+		color: white;
+		li { display: inline-block; }
+	}
+}
+
+.peek-slider, .peek-slider .window, .peek-slider .slide {
+		height: $sliderHeight;
+		max-height: $sliderMax;
+		@media screen and ( max-width: 800px ){
+			height: $tabletHeight;
+		}
+		@media screen and ( max-width: 700px ){
+			height: $mobileHeight;
+		}
+}
+
+//Slide Type Styles
+.slide {
+	&.image{
+		text-align: center;
+		img {
+		    width: auto;
+		    height: 100%;
+		    margin: auto;
+		}
+	} 
+}
+
+

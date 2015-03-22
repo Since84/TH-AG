@@ -1,0 +1,11 @@
+<section class="tile-browser box-grid container">
+	{% if ( nav ) %}
+		{%  include '/components/tile-browser/view/nav.twig' %}
+	{% endif %}
+	{{ viewer }}
+	<ul class="tile-container">
+		{% for tile in tiles %}
+			{% include slide_template %}
+		{% endfor %}
+	</ul>
+</section>

@@ -1,0 +1,23 @@
+.footer-nav {
+	ul{
+		width: 84%;
+		min-width: 400px;
+		display: inline-block;
+		vertical-align: top;
+		padding: 10px 0;
+		> li {
+			display: inline-block;
+			width: auto;
+			vertical-align: top;
+			margin-bottom: 0px;
+			margin-right: 20px;
+			a {
+				text-decoration: none;
+				font-weight: 400;
+				&:hover{
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
